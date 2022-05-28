@@ -14,6 +14,7 @@ public class FirstAPITest {
                         .when()
                         .get("http://training.skillo-bg.com:3100/posts/public?take=1&skip=0")
                         .then()
+                        .statusCode(200)
                         .log()
                         .all();
         }
