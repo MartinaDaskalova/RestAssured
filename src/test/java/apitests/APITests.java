@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -277,7 +278,6 @@ public class APITests {
     @Test (priority = 1)
     public void getPosts(){
 
-        ValidatableResponse response =
         given()
                 .header("Content-Type", "application/json")
                 .header("Authorization","Bearer " + loginToken)
@@ -289,9 +289,8 @@ public class APITests {
                 .log()
                 .all()
                 .statusCode(200);
-        String posts = new Gson().toJson(response);
-        }
 
+        }
 
 
 
